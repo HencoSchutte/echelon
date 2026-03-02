@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useParams } from "react-router-dom";
-import ProductImage from "../components/ProductImage";
+import ProductImage from "../components/productImage";
 import { ShoppingCart } from "lucide-react";
 import { useState, useEffect  } from "react";
 import { useCart } from "../context/CartContext";

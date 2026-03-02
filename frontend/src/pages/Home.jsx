@@ -1,6 +1,6 @@
-import HeroSearch from "../components/HeroSearch";
-import Categories from "../components/Categories";
-import Experience from "../components/Experience";
+import HeroSearch from "../components/heroSearch";
+import Categories from "../components/categories";
+import Experience from "../components/experience";
 
 export default function Home() {
   return (

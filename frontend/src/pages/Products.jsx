@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Search, SlidersHorizontal } from "lucide-react";
-import ProductCard from "../components/ProductCard";
+import ProductCard from "../components/productCard";
 import ProductModal from "../components/ProductModal";
 import { useState, useEffect  } from "react";
 import { Link } from "react-router-dom";
