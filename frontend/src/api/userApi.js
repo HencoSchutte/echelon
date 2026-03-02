@@ -1,7 +1,7 @@
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api/users";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 export const registerUser = async (userData) => {
-  const res = await fetch(`${API_URL}/register`, {
+  const res = await fetch(`${API_URL}/api/users/register`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(userData),
@@ -13,7 +13,7 @@ export const registerUser = async (userData) => {
 };
 
 export const loginUser = async (credentials) => {
-  const res = await fetch(`${API_URL}/login`, {
+  const res = await fetch(`${API_URL}/api/users/login`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(credentials),
@@ -25,7 +25,7 @@ export const loginUser = async (credentials) => {
 };
 
 export const getUserProfile = async (token) => {
-  const res = await fetch(`${API_URL}/profile`, {
+  const res = await fetch(`${API_URL}/api/users/profile`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
