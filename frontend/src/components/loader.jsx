@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./Loader.css";
+import "./loader.css";
 
 export default function Loader() {
   // Prevent scrolling while loader is active

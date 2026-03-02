@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import ProductCard from "./ProductCard";
+import ProductCard from "./productCard";
 
 export default function ProductGrid() {
   const [products, setProducts] = useState([]);
