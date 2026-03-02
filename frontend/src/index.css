@@ -1,0 +1,209 @@
+/* ---------------- BASE RESET ---------------- */
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #000;
+  overflow-x: hidden;
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #000;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0a0a0a, #000000 60%);
+}
+
+/* ---------------- LINKS ---------------- */
+
+a {
+  font-weight: 500;
+  color: #7aa2ff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #9db8ff;
+}
+
+/* ---------------- BUTTONS ---------------- */
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #111;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+button:hover {
+  border-color: #7aa2ff;
+}
+
+/* ---------------- TAILWIND ---------------- */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------- DESIGN TOKENS ---------------- */
+
+@layer base {
+  :root {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --radius: 0.5rem;
+  }
+}
+
+/* ---------------- NAVBAR EFFECTS ---------------- */
+
+.nav-glow:hover {
+  text-shadow: 0 0 10px #2979ff;
+}
+
+/* subtle shine line */
+.nav-shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.25),
+    transparent
+  );
+  opacity: 0.6;
+}
+
+/* ---------------- LOGO ANIMATION ---------------- */
+
+.logo-square {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.line {
+  position: absolute;
+  background: white;
+  box-shadow: 0 0 6px rgba(255,255,255,0.6);
+}
+
+/* square drawing animation */
+
+.line.top {
+  height: 2px;
+  width: 0;
+  top: 0;
+  left: 0;
+  animation: drawTop 0.35s ease forwards;
+}
+
+.line.right {
+  width: 2px;
+  height: 0;
+  top: 0;
+  right: 0;
+  animation: drawRight 0.35s ease 0.35s forwards;
+}
+
+.line.bottom {
+  height: 2px;
+  width: 0;
+  bottom: 0;
+  right: 0;
+  animation: drawBottom 0.35s ease 0.7s forwards;
+}
+
+.line.left {
+  width: 2px;
+  height: 0;
+  bottom: 0;
+  left: 0;
+  animation: drawLeft 0.35s ease 1.05s forwards;
+}
+
+@keyframes drawTop {
+  to { width: 100%; }
+}
+
+@keyframes drawRight {
+  to { height: 100%; }
+}
+
+@keyframes drawBottom {
+  to { width: 100%; }
+}
+
+@keyframes drawLeft {
+  to { height: 100%; }
+}
+
+/* ---------------- BRAND TEXT ---------------- */
+
+.logo-text {
+  font-weight: 300;
+  letter-spacing: 0.45em;
+  font-size: 0.95rem;
+  transition: all 0.35s ease;
+}
+
+@media (min-width: 768px) {
+  .logo-text {
+    font-size: 1.1rem;
+  }
+}
+
+.group:hover .logo-text {
+  letter-spacing: 0.55em;
+}
+
+.group:hover .line {
+  box-shadow: 0 0 10px rgba(255,255,255,0.9);
+}
+
+/* ---------------- SCROLLBAR ---------------- */
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(99,102,241,0.5) transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgba(99,102,241,0.5);
+  border-radius: 9999px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
